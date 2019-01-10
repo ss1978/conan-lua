@@ -1,0 +1,10 @@
+project(luatest)
+
+include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+conan_basic_setup()
+enable_testing()
+include(CTest)
+add_executable(${PROJECT_NAME} test.c)
+include_directories(${CONAN_INCLUDE_DIRS})
+target_link_libraries(${PROJECT_NAME} ${CONAN_LIBS} m)
+add_test(${PROJECT_NAME} bin/${PROJECT_NAME})
