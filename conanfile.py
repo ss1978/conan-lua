@@ -42,7 +42,8 @@ class LuaConan(ConanFile):
         with tools.chdir(os.path.abspath(self._source_subfolder)):
             args = [{
                 "Linux": "linux",
-                "Windows": "mingw"
+                "Windows": "mingw",
+                "Macos": "macosx"
             }[self.settings.os_build.value]]
             env_build = AutoToolsBuildEnvironment(self)
             args.append('MYLDFLAGS=%s' % env_build.vars["LDFLAGS"])
