@@ -41,7 +41,7 @@ class LuaConan(ConanFile):
         build_folder = os.path.abspath(self._build_subfolder)
         with tools.chdir(os.path.abspath(self._source_subfolder)):
             args = [{
-                "Linux": "linux",
+                "Linux": "posix",
                 "Windows": "mingw",
                 "Macos": "macosx"
             }[self.settings.os_build.value]]
