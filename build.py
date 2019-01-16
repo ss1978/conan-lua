@@ -2,12 +2,10 @@
 # -*- coding: utf-8 -*-
 
 
-from bincrafters import build_template_installer, build_shared
-import os
+from bincrafters import build_template_default
 
 if __name__ == "__main__":
 
-    arch = os.environ["ARCH"]
-    builder = build_template_installer.get_builder()
-    builder.add({"os" : build_shared.get_os(), "arch_build" : arch, "arch": arch}, {}, {}, {})
+    builder = build_template_default.get_builder()
+
     builder.run()
