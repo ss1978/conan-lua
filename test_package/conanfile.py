@@ -7,7 +7,7 @@ import os
 
 
 class TestPackageConan(ConanFile):    
-    generators = "cmake"
+    generators = "cmake_find_package"
     def build(self):
         pass
 
